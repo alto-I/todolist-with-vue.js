@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="todo.css">
+  <script src="https://unpkg.com/vue"></script>
+  <title>ToDoList</title>
+</head>
+
+<body>
+  <div id="todo">
+    <h1>ToDo List</h1>
+    <li v-for="(todolist, index) in todolists">
+      <input type="checkbox" id="checkbox" v-model="todolist.checked" @click="change(index)">
+      <span class="content" :style="completedStyle(index)">{{ todolist.content }}</span>
+      <button @click="remove(index)">削除</button>
+    </li>
+    <p>
+      <input type="text" v-model="newContent">
+      <button @click="register">新規登録</button>
+    </p>
+  </div>
+
+  <script type="text/javascript" src="todo.js"></script>
+</body>
+
+</html>
