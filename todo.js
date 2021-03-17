@@ -14,7 +14,7 @@ const vue = new Vue({
     }
   },
   methods: {
-    registration () {
+    register () {
       if (!this.newContent) {
         return
       }
